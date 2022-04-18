@@ -43,5 +43,16 @@ class pcfg(object):
 
 		print('lhs, rhs, prob \n', lhs, rhstup, prob)
 
+	def verifyGram(self, gram):
+		
+
 
 if __name__ == '__main__':
+
+	with open('probcfg.pcfg', 'r') as gramfile:
+		grammar = PCFG(gramfile)
+
+	if grammar.verifyGram():
+		print("Yes, grammar is a valid PCFG in CNF")
+	else:
+		print("No, grammar is not a valid PCFG in CNF")
