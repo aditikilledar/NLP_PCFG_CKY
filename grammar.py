@@ -43,7 +43,7 @@ class PCFG(object):
 		rhstup = tuple(rhs.strip().split())
 		prob = float(prob)
 
-		print('lhs, rhs, prob \n', lhs, rhstup, prob)
+		#print('lhs, rhs, prob \n', lhs, rhstup, prob)
 		# dont forget return stmt
 		return lhs, rhstup, prob
 
