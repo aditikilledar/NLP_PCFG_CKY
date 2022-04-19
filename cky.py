@@ -6,7 +6,7 @@ from collections import defaultdict
 class CKYParser(object):
 
 	def __init__(self, grammar):
-		self.grammar = grammar;
+		self.grammar = grammar
 
 	# TODO
 	def checkMembership(self, tokens):
@@ -17,8 +17,9 @@ class CKYParser(object):
 	def backtrack(self, tokens):
 		pass
 
-def makeParseTree (???)
-# TODO
+def makeParseTree():
+	# TODO
+	pass
 
 def clean(a):
 	a = a.lower().strip().split()
@@ -36,8 +37,6 @@ if __name__ == "__main__":
 
 		sentence = "Flights from miami to cleveland"
 		inputokens = clean(sentence)
-
-		if checkMembership(inputokens):
-			# TODO 
-			# parse tree with backpointers
-			# print table
+		#parse tree with backpointers and print table
+		if parser.checkMembership(inputokens):
+			pass
