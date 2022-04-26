@@ -43,7 +43,7 @@ class PCFG(object):
 		rhstup = tuple(rhs.strip().split())
 		prob = float(prob)
 
-		#print('lhs, rhs, prob \n', lhs, rhstup, prob)
+		# print('lhs, rhs, prob \n', lhs, rhstup, prob)
 		# dont forget return stmt
 		return lhs, rhstup, prob
 
@@ -52,6 +52,12 @@ class PCFG(object):
 		Return True if the grammar is a valid PCFG in CNF.
 		Otherwise return False. 
 		"""
+
+		# for each in self.lhsrules:
+		# 	print("(lhs)->", each)
+
+		# for each in self.rhsrules:
+		# 	print("(rhs)->", each)
 
 		for key,values in self.lhsrules.items():
 			lhs = values[0][0]
@@ -71,7 +77,8 @@ class PCFG(object):
 
 if __name__ == '__main__':
 
-	with open('probcfg.pcfg', 'r') as gramfile:
+	# with open('probcfg.pcfg', 'r') as gramfile:
+	with open('pcfg.cfg', 'r') as gramfile:
 		grammar = PCFG(gramfile)
 
 	if grammar.verifyGram():
