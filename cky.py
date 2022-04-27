@@ -70,8 +70,9 @@ class CKYParser(object):
 											ptrs[(i, j)][items[0]].append(((key[0],i,k), (key[1],k,j))) # ptrs[i,j]=ptrs[i,j] union M
 										else:
 											ptrs[(i, j)][items[0]] = [((key[0],i,k), (key[1],k,j))] # ptrs[i,j]= M
+											# print('\n$$',ptrs[(i, j)][items[0]])
 
-		pprint.pprint(dict(ptrs))
+		# pprint.pprint(dict(ptrs[4,4][items[0]]))
 
 		if self.grammar.startsym in ptrs[(0, n)]:
 			print("YES")
