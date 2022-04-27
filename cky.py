@@ -30,10 +30,10 @@ class CKYParser(object):
 					for items in values:
 						ptrs[(i, i+1)][items[0]] = word
 
-		pprint.pprint(dict(ptrs))
+		# pprint.pprint(dict(ptrs))
 
 		print('\n-------------------------------------------------------------\n')
-
+		print(self.grammar.rhsrules.items())
 
 		# print(pi)
         # pseudocode
@@ -47,19 +47,15 @@ class CKYParser(object):
 
 		"""
 		via geeks4geeks:-
-		For i = 1 to n:
-		For each variable A:
-		We check if A -> b is a rule and b = wi for some i:
-		If so, we place A in cell (i, i) of our table. 
 
 		For l = 2 to n:
-		For i = 1 to n-l+1:
-		j = i+l-1
-		For k = i to j-1:
-		For each rule A -> BC: 
-		We check if (i, k) cell contains B and (k + 1, j) cell contains C:
-		If so, we put A in cell (i, j) of our table. 
-		"""
+			For i = 1 to n-l+1:
+			j = i+l-1
+				For k = i to j-1:
+					For each rule A -> BC: 
+						We check if (i, k) cell contains B and (k + 1, j) cell contains C:
+							If so, we put A in cell (i, j) of our table. 
+			"""
 
 		for length in range(2, n+1):
 			for i in range(n - length + 1):
@@ -76,7 +72,6 @@ class CKYParser(object):
 											ptrs[(i, j)][items[0]] = [((key[0],i,k), (key[1],k,j))] # ptrs[i,j]= M
 
 		pprint.pprint(dict(ptrs))
-		# print(dict(ptrs))
 
 		if self.grammar.startsym in ptrs[(0, n)]:
 			print("YES")
