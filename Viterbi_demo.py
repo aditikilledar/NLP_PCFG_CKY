@@ -6,6 +6,7 @@ import time
 from functools import reduce
 from nltk import tokenize
 from nltk.grammar import PCFG
+from Viterbi import ViterbiParser
 
 pcfg1 = PCFG.fromstring(
     """
